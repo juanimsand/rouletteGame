@@ -426,6 +426,9 @@ void OutputManager::showPlayerBalance(std::string name, int balance)
     message.append(" balance is: ");
     message.append(std::to_string(balance));
     printMessage(message);
+    if(toFile){ // if output is saved to file the print this message in console too
+        forceOutputToConsole(message);
+    }
     return;
 }
 
@@ -436,5 +439,8 @@ void OutputManager::showPlayersTotalBalance(int playersQty, int totalBalance)
     message.append(" players balance is: ");
     message.append(std::to_string(totalBalance));
     printMessage(message);
+    if(toFile){ // if output is saved to file the print this message in console too
+        forceOutputToConsole(message);
+    }
     return;
 }
