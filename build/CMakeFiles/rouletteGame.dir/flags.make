@@ -6,5 +6,5 @@ CXX_FLAGS =   -std=gnu++2a
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/jimsand/cppcode/rouletteGame/include 
+CXX_INCLUDES = -I/home/jimsand/Repositories/rouletteGame/include 
 

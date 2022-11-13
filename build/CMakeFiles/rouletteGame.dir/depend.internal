@@ -7,26 +7,26 @@ CMakeFiles/rouletteGame.dir/rouletteGame.cpp.o
  ../include/outputmanager.h
  ../include/roulette.h
  ../include/rouletteplayer.h
- /home/jimsand/cppcode/rouletteGame/rouletteGame.cpp
+ /home/jimsand/Repositories/rouletteGame/rouletteGame.cpp
 CMakeFiles/rouletteGame.dir/src/casino.cpp.o
  ../include/appGeneralMacros.h
  ../include/casino.h
  ../include/outputmanager.h
  ../include/roulette.h
  ../include/rouletteplayer.h
- /home/jimsand/cppcode/rouletteGame/src/casino.cpp
+ /home/jimsand/Repositories/rouletteGame/src/casino.cpp
 CMakeFiles/rouletteGame.dir/src/outputmanager.cpp.o
  ../include/appGeneralMacros.h
  ../include/outputmanager.h
- /home/jimsand/cppcode/rouletteGame/src/outputmanager.cpp
+ /home/jimsand/Repositories/rouletteGame/src/outputmanager.cpp
 CMakeFiles/rouletteGame.dir/src/roulette.cpp.o
  ../include/appGeneralMacros.h
  ../include/outputmanager.h
  ../include/roulette.h
  ../include/rouletteplayer.h
- /home/jimsand/cppcode/rouletteGame/src/roulette.cpp
+ /home/jimsand/Repositories/rouletteGame/src/roulette.cpp
 CMakeFiles/rouletteGame.dir/src/rouletteplayer.cpp.o
  ../include/appGeneralMacros.h
  ../include/outputmanager.h
  ../include/rouletteplayer.h
- /home/jimsand/cppcode/rouletteGame/src/rouletteplayer.cpp
+ /home/jimsand/Repositories/rouletteGame/src/rouletteplayer.cpp

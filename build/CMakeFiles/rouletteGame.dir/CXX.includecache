@@ -42,27 +42,27 @@ iostream
 outputmanager.h
 ../include/outputmanager.h
 
-/home/jimsand/cppcode/rouletteGame/rouletteGame.cpp
+/home/jimsand/Repositories/rouletteGame/rouletteGame.cpp
 casino.h
-/home/jimsand/cppcode/rouletteGame/casino.h
+/home/jimsand/Repositories/rouletteGame/casino.h
 outputmanager.h
-/home/jimsand/cppcode/rouletteGame/outputmanager.h
+/home/jimsand/Repositories/rouletteGame/outputmanager.h
 
-/home/jimsand/cppcode/rouletteGame/src/casino.cpp
+/home/jimsand/Repositories/rouletteGame/src/casino.cpp
 casino.h
-/home/jimsand/cppcode/rouletteGame/src/casino.h
+/home/jimsand/Repositories/rouletteGame/src/casino.h
 
-/home/jimsand/cppcode/rouletteGame/src/outputmanager.cpp
+/home/jimsand/Repositories/rouletteGame/src/outputmanager.cpp
 outputmanager.h
-/home/jimsand/cppcode/rouletteGame/src/outputmanager.h
+/home/jimsand/Repositories/rouletteGame/src/outputmanager.h
 
-/home/jimsand/cppcode/rouletteGame/src/roulette.cpp
+/home/jimsand/Repositories/rouletteGame/src/roulette.cpp
 roulette.h
-/home/jimsand/cppcode/rouletteGame/src/roulette.h
+/home/jimsand/Repositories/rouletteGame/src/roulette.h
 random
 -
 
-/home/jimsand/cppcode/rouletteGame/src/rouletteplayer.cpp
+/home/jimsand/Repositories/rouletteGame/src/rouletteplayer.cpp
 rouletteplayer.h
-/home/jimsand/cppcode/rouletteGame/src/rouletteplayer.h
+/home/jimsand/Repositories/rouletteGame/src/rouletteplayer.h
 

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jimsand/cppcode/rouletteGame
+CMAKE_SOURCE_DIR = /home/jimsand/Repositories/rouletteGame
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jimsand/cppcode/rouletteGame/build
+CMAKE_BINARY_DIR = /home/jimsand/Repositories/rouletteGame/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/rouletteGame.dir/depend.make
@@ -59,68 +59,68 @@ include CMakeFiles/rouletteGame.dir/flags.make
 
 CMakeFiles/rouletteGame.dir/rouletteGame.cpp.o: CMakeFiles/rouletteGame.dir/flags.make
 CMakeFiles/rouletteGame.dir/rouletteGame.cpp.o: ../rouletteGame.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jimsand/cppcode/rouletteGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/rouletteGame.dir/rouletteGame.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rouletteGame.dir/rouletteGame.cpp.o -c /home/jimsand/cppcode/rouletteGame/rouletteGame.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jimsand/Repositories/rouletteGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/rouletteGame.dir/rouletteGame.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rouletteGame.dir/rouletteGame.cpp.o -c /home/jimsand/Repositories/rouletteGame/rouletteGame.cpp
 
 CMakeFiles/rouletteGame.dir/rouletteGame.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rouletteGame.dir/rouletteGame.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jimsand/cppcode/rouletteGame/rouletteGame.cpp > CMakeFiles/rouletteGame.dir/rouletteGame.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jimsand/Repositories/rouletteGame/rouletteGame.cpp > CMakeFiles/rouletteGame.dir/rouletteGame.cpp.i
 
 CMakeFiles/rouletteGame.dir/rouletteGame.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rouletteGame.dir/rouletteGame.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jimsand/cppcode/rouletteGame/rouletteGame.cpp -o CMakeFiles/rouletteGame.dir/rouletteGame.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jimsand/Repositories/rouletteGame/rouletteGame.cpp -o CMakeFiles/rouletteGame.dir/rouletteGame.cpp.s
 
 CMakeFiles/rouletteGame.dir/src/outputmanager.cpp.o: CMakeFiles/rouletteGame.dir/flags.make
 CMakeFiles/rouletteGame.dir/src/outputmanager.cpp.o: ../src/outputmanager.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jimsand/cppcode/rouletteGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/rouletteGame.dir/src/outputmanager.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rouletteGame.dir/src/outputmanager.cpp.o -c /home/jimsand/cppcode/rouletteGame/src/outputmanager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jimsand/Repositories/rouletteGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/rouletteGame.dir/src/outputmanager.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rouletteGame.dir/src/outputmanager.cpp.o -c /home/jimsand/Repositories/rouletteGame/src/outputmanager.cpp
 
 CMakeFiles/rouletteGame.dir/src/outputmanager.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rouletteGame.dir/src/outputmanager.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jimsand/cppcode/rouletteGame/src/outputmanager.cpp > CMakeFiles/rouletteGame.dir/src/outputmanager.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jimsand/Repositories/rouletteGame/src/outputmanager.cpp > CMakeFiles/rouletteGame.dir/src/outputmanager.cpp.i
 
 CMakeFiles/rouletteGame.dir/src/outputmanager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rouletteGame.dir/src/outputmanager.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jimsand/cppcode/rouletteGame/src/outputmanager.cpp -o CMakeFiles/rouletteGame.dir/src/outputmanager.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jimsand/Repositories/rouletteGame/src/outputmanager.cpp -o CMakeFiles/rouletteGame.dir/src/outputmanager.cpp.s
 
 CMakeFiles/rouletteGame.dir/src/casino.cpp.o: CMakeFiles/rouletteGame.dir/flags.make
 CMakeFiles/rouletteGame.dir/src/casino.cpp.o: ../src/casino.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jimsand/cppcode/rouletteGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/rouletteGame.dir/src/casino.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rouletteGame.dir/src/casino.cpp.o -c /home/jimsand/cppcode/rouletteGame/src/casino.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jimsand/Repositories/rouletteGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/rouletteGame.dir/src/casino.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rouletteGame.dir/src/casino.cpp.o -c /home/jimsand/Repositories/rouletteGame/src/casino.cpp
 
 CMakeFiles/rouletteGame.dir/src/casino.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rouletteGame.dir/src/casino.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jimsand/cppcode/rouletteGame/src/casino.cpp > CMakeFiles/rouletteGame.dir/src/casino.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jimsand/Repositories/rouletteGame/src/casino.cpp > CMakeFiles/rouletteGame.dir/src/casino.cpp.i
 
 CMakeFiles/rouletteGame.dir/src/casino.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rouletteGame.dir/src/casino.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jimsand/cppcode/rouletteGame/src/casino.cpp -o CMakeFiles/rouletteGame.dir/src/casino.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jimsand/Repositories/rouletteGame/src/casino.cpp -o CMakeFiles/rouletteGame.dir/src/casino.cpp.s
 
 CMakeFiles/rouletteGame.dir/src/roulette.cpp.o: CMakeFiles/rouletteGame.dir/flags.make
 CMakeFiles/rouletteGame.dir/src/roulette.cpp.o: ../src/roulette.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jimsand/cppcode/rouletteGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/rouletteGame.dir/src/roulette.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rouletteGame.dir/src/roulette.cpp.o -c /home/jimsand/cppcode/rouletteGame/src/roulette.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jimsand/Repositories/rouletteGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/rouletteGame.dir/src/roulette.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rouletteGame.dir/src/roulette.cpp.o -c /home/jimsand/Repositories/rouletteGame/src/roulette.cpp
 
 CMakeFiles/rouletteGame.dir/src/roulette.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rouletteGame.dir/src/roulette.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jimsand/cppcode/rouletteGame/src/roulette.cpp > CMakeFiles/rouletteGame.dir/src/roulette.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jimsand/Repositories/rouletteGame/src/roulette.cpp > CMakeFiles/rouletteGame.dir/src/roulette.cpp.i
 
 CMakeFiles/rouletteGame.dir/src/roulette.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rouletteGame.dir/src/roulette.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jimsand/cppcode/rouletteGame/src/roulette.cpp -o CMakeFiles/rouletteGame.dir/src/roulette.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jimsand/Repositories/rouletteGame/src/roulette.cpp -o CMakeFiles/rouletteGame.dir/src/roulette.cpp.s
 
 CMakeFiles/rouletteGame.dir/src/rouletteplayer.cpp.o: CMakeFiles/rouletteGame.dir/flags.make
 CMakeFiles/rouletteGame.dir/src/rouletteplayer.cpp.o: ../src/rouletteplayer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jimsand/cppcode/rouletteGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/rouletteGame.dir/src/rouletteplayer.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rouletteGame.dir/src/rouletteplayer.cpp.o -c /home/jimsand/cppcode/rouletteGame/src/rouletteplayer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jimsand/Repositories/rouletteGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/rouletteGame.dir/src/rouletteplayer.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rouletteGame.dir/src/rouletteplayer.cpp.o -c /home/jimsand/Repositories/rouletteGame/src/rouletteplayer.cpp
 
 CMakeFiles/rouletteGame.dir/src/rouletteplayer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rouletteGame.dir/src/rouletteplayer.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jimsand/cppcode/rouletteGame/src/rouletteplayer.cpp > CMakeFiles/rouletteGame.dir/src/rouletteplayer.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jimsand/Repositories/rouletteGame/src/rouletteplayer.cpp > CMakeFiles/rouletteGame.dir/src/rouletteplayer.cpp.i
 
 CMakeFiles/rouletteGame.dir/src/rouletteplayer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rouletteGame.dir/src/rouletteplayer.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jimsand/cppcode/rouletteGame/src/rouletteplayer.cpp -o CMakeFiles/rouletteGame.dir/src/rouletteplayer.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jimsand/Repositories/rouletteGame/src/rouletteplayer.cpp -o CMakeFiles/rouletteGame.dir/src/rouletteplayer.cpp.s
 
 # Object files for target rouletteGame
 rouletteGame_OBJECTS = \
@@ -140,7 +140,7 @@ rouletteGame: CMakeFiles/rouletteGame.dir/src/roulette.cpp.o
 rouletteGame: CMakeFiles/rouletteGame.dir/src/rouletteplayer.cpp.o
 rouletteGame: CMakeFiles/rouletteGame.dir/build.make
 rouletteGame: CMakeFiles/rouletteGame.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jimsand/cppcode/rouletteGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable rouletteGame"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jimsand/Repositories/rouletteGame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable rouletteGame"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/rouletteGame.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -153,6 +153,6 @@ CMakeFiles/rouletteGame.dir/clean:
 .PHONY : CMakeFiles/rouletteGame.dir/clean
 
 CMakeFiles/rouletteGame.dir/depend:
-	cd /home/jimsand/cppcode/rouletteGame/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jimsand/cppcode/rouletteGame /home/jimsand/cppcode/rouletteGame /home/jimsand/cppcode/rouletteGame/build /home/jimsand/cppcode/rouletteGame/build /home/jimsand/cppcode/rouletteGame/build/CMakeFiles/rouletteGame.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/jimsand/Repositories/rouletteGame/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jimsand/Repositories/rouletteGame /home/jimsand/Repositories/rouletteGame /home/jimsand/Repositories/rouletteGame/build /home/jimsand/Repositories/rouletteGame/build /home/jimsand/Repositories/rouletteGame/build/CMakeFiles/rouletteGame.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/rouletteGame.dir/depend
 
