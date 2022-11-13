@@ -9,15 +9,15 @@ After 10000 plays, total balance of 6 players is showed and quit!
 
 ### Bet method
 <p>Each player has own notes for calculate how much they will bet on each roulette play, starting notes: { 1, 2, 3, 4 }.</p>
-<p>Bet calculation is: addition of first and last number in notes. First bet will be 1 + 4 = 5.</p>
+<p>Bet calculation: addition of first and last number in notes. First bet will be 1 + 4 = 5.</p>
 
-* **Won:**&nbsp;&nbsp;&nbsp;&nbsp;The amount won is added at the end of notes.
+* **Won:**&nbsp;&nbsp;&nbsp;&nbsp;The amount won is added at the end of notes. If bet is 1 + 4 = 5, then notes are { 1, 2, 3, 4, 5 }
 * **Lost:**&nbsp;&nbsp;&nbsp;&nbsp;The first and last items from notes are deleted.
 * **Special case:**&nbsp;&nbsp;&nbsp;&nbsp;If only one item remains in notes, then the player bet that item.
 
 <p>&nbsp;</p>
 <p>Bets has a minimum of 5 and a maximum of 4000.</p>
-<p>If player could not bet because the bet is out of range or no item left in notes, starts again with initial notes { 1, 2, 3, 4 }.</p>
+<p>If a player could not bet because the bet is out of range or no item left in notes, starts again with initial notes { 1, 2, 3, 4 }.</p>
 
 <p>When the game ends, balance of each player and total (of 6 players) is showed.</p>
 <p>Oh, players are lucky, they have infinite money to bet :).</p>
@@ -30,8 +30,8 @@ This project was developed in C++ using:
 * g++ (Ubuntu 9.3.0-17ubuntu1~20.04) 9.3.0.
 * GNU gdb (Ubuntu 9.2-0ubuntu1~20.04.1) 9.2.
 
-### Structure
-On repository folder you should find:
+### Repository structure
+On root you should find:
 * include/
     * appGeneralMacros.h
     * casino.h
@@ -55,12 +55,12 @@ On repository folder you should find:
 * CMakeLists.txt
 
 ### Build
-
+<p>In the case that you want to change something in project, you can do it but then you must rebuild the project, if that is your case keep reading.</p>
 For build this project you must have CMake (and make) installed. Follow this steps:
-0. Go to repositroy directory.
+0. Go to repository root directory.
 1. Go to build directory:
     * ls build/
-2. Clean directory. **Be careful, you are going to delete everyting in folder, be sure to be at build directory (and do not forget the . preceding the / )**:
+2. Clean directory. **Be careful, you are going to delete everything in folder, be sure to be at build directory (and do not forget the . preceding the / )**:
     * rm -r ./*
 3. Run cmake, this should generate the new files in build folder:
     * cmake ../
@@ -71,4 +71,4 @@ For build this project you must have CMake (and make) installed. Follow this ste
 ## How to run
 
 <p>In build folder you should find the rouletteGame executable.</p>
-<p>A help of how to execute it is displayed if you executed with --help or -h argument.</p>
+<p>A useful help text is displayed if you execute it with --help or -h as argument.</p>
