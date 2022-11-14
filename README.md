@@ -1,5 +1,5 @@
 # Roulette game
-Simple cpp project of roulette game simulation.
+Simple C++ project of roulette game simulation.
 
 ## What rouletteGame application does
 
