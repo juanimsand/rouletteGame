@@ -1,3 +1,0 @@
-/home/jimsand/Repositories/rouletteGame/build/CMakeFiles/rebuild_cache.dir
-/home/jimsand/Repositories/rouletteGame/build/CMakeFiles/edit_cache.dir
-/home/jimsand/Repositories/rouletteGame/build/CMakeFiles/rouletteGame.dir
