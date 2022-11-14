@@ -216,7 +216,7 @@ void Roulette::checkWinners(rouletteNumber _number)
                     players[i]->lost();
                 }
                 break;
-            case rouletteBetType::MINOR:
+            case rouletteBetType::_1_TO_18:
                 if(_number.minor){   // winner
                     players[i]->won();
                 }
@@ -224,7 +224,7 @@ void Roulette::checkWinners(rouletteNumber _number)
                     players[i]->lost();
                 }
                 break;
-            case rouletteBetType::MAJOR:
+            case rouletteBetType::_19_TO_36:
                 if(!_number.minor){   // winner
                     players[i]->won();
                 }
