@@ -21,33 +21,12 @@ void Roulette::initializeRouletteNumbers()
 
     for(int i = 1; i < rouletteNumbers.size(); i++){
         rouletteNumbers[i].number = i;
-        if(i < 19){ // it is minor
-            rouletteNumbers[i].minor = true;
-        }
-        else{
-            rouletteNumbers[i].minor = false;
-        }
-        if((i % 2) == 0){   // it is even
-            rouletteNumbers[i].even = true;
-        }
-        else{
-            rouletteNumbers[i].even = false;
-        }
-        if((i < 10) && (rouletteNumbers[i].even == false)){ // lower than 10 and odd, then is red
-            rouletteNumbers[i].red = true;
-        }
-        else if((i > 10) && (i < 19) && (rouletteNumbers[i].even == true)){    // greater than 10, lower than 19 and even, then is red
-            rouletteNumbers[i].red = true;
-        }
-        else if((i > 18) && (i < 29) && (rouletteNumbers[i].even == false)){    // greater than 10, lower than 19 and odd, then is red
-            rouletteNumbers[i].red = true;
-        }
-        else if((i > 28) && (rouletteNumbers[i].even == true)){    // greater than 28 and even, then is red
-            rouletteNumbers[i].red = true;
-        }
-        else{   // is black
-            rouletteNumbers[i].red = false;
-        }
+        rouletteNumbers[i].minor = (i < 19);
+        rouletteNumbers[i].even = ((i % 2) == 0);
+        rouletteNumbers[i].red = (  ((i < 10) && (rouletteNumbers[i].even == false)) ||
+                                    ((i > 10) && (i < 19) && (rouletteNumbers[i].even == true)) ||
+                                    ((i > 18) && (i < 29) && (rouletteNumbers[i].even == false)) ||
+                                    ((i > 28) && (rouletteNumbers[i].even == true)) );
     }
     return;
 }
@@ -201,52 +180,22 @@ void Roulette::checkWinners(rouletteNumber _number)
     for(int i = 0; i < players.size(); i++){
         switch (players[i]->getBetType()){
             case rouletteBetType::EVEN:
-                if(_number.even){   // winner
-                    players[i]->won();
-                }
-                else{   // lost
-                    players[i]->lost();
-                }
+                _number.even ? players[i]->won() : players[i]->lost();
                 break;
             case rouletteBetType::ODD:
-                if(!_number.even){   // winner
-                    players[i]->won();
-                }
-                else{   // lost
-                    players[i]->lost();
-                }
+                _number.even ? players[i]->lost() : players[i]->won();
                 break;
             case rouletteBetType::_1_TO_18:
-                if(_number.minor){   // winner
-                    players[i]->won();
-                }
-                else{   // lost
-                    players[i]->lost();
-                }
+                _number.minor ? players[i]->won() : players[i]->lost();
                 break;
             case rouletteBetType::_19_TO_36:
-                if(!_number.minor){   // winner
-                    players[i]->won();
-                }
-                else{   // lost
-                    players[i]->lost();
-                }
+                _number.minor ? players[i]->lost() : players[i]->won();
                 break;
             case rouletteBetType::RED:
-                if(_number.red){   // winner
-                    players[i]->won();
-                }
-                else{   // lost
-                    players[i]->lost();
-                }
+                _number.red ? players[i]->won() : players[i]->lost();
                 break;
             case rouletteBetType::BLACK:
-                if(!_number.red){   // winner
-                    players[i]->won();
-                }
-                else{   // lost
-                    players[i]->lost();
-                }
+                _number.red ? players[i]->lost() : players[i]->won();
                 break;
             default:
                 if(outputManager){

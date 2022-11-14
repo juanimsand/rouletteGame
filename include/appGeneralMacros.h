@@ -48,5 +48,11 @@ Oh, those players are lucky, they have infinite money to bet :).\n\n\
 
 
 // roulette player
+#define EVEN_STRING             "even"
+#define ODD_STRING              "odd"
+#define RED_STRING              "red"
+#define BLACK_STRING            "black"
+#define MINOR_STRING            "1 to 18"
+#define MAJOR_STRING            "19 to 36"
 
 #endif

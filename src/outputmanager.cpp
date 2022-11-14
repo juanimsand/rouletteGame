@@ -319,11 +319,11 @@ void OutputManager::showNumberInfo(int number, bool red, bool even, bool minor)
     message.append(std::to_string(number));
     message.append(" information ***");
     message.append("\n");
-    message.append(red ? "red" : "black");
+    message.append(red ? RED_STRING : BLACK_STRING);
     message.append("\n");
-    message.append(even ? "even" : "odd");
+    message.append(even ? EVEN_STRING : ODD_STRING);
     message.append("\n");
-    message.append(minor ? "minor" : "major");
+    message.append(minor ? MINOR_STRING : MAJOR_STRING);
     printMessage(message);
     return;
 }
