@@ -57,16 +57,17 @@ On root you should find:
 ### Build
 <p>In the case that you want to change something in project, you can do it but then you must rebuild the project, if that is your case keep reading.</p>
 For build this project you must have CMake (and make) installed. Follow this steps:
-0. Go to repository root directory.
-1. Go to build directory:
-    * ls build/
-2. Clean directory. **Be careful, you are going to delete everything in folder, be sure to be at build directory (and do not forget the . preceding the / )**:
-    * rm -r ./*
-3. Run cmake, this should generate the new files in build folder:
-    * cmake ../
-4. Run make, this should generate application executable:
-    * make
-5. You just generate the rouletteGame application executable.
+
+1. Go to repository root directory.
+2. Go to build directory:
+    * `ls build/`
+3. Clean directory. **Be careful, you are going to delete everything in folder, be sure to be at build directory (and do not forget the . preceding the / )**:
+    * `rm -r ./*`
+4. Run cmake, this should generate the new files in build folder:
+    * `cmake ../`
+5. Run make, this should generate application executable:
+    * `make`
+6. You just generate the rouletteGame application executable, congrats!
 
 ## How to run
 
