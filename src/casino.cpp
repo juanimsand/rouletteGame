@@ -91,7 +91,7 @@ void Casino::playRoulettes()
 void Casino::playRoulette(int rouletteId)
 {
     if((rouletteId >= 0) && (rouletteId < roulettes.size())){
-        roulettes[rouletteId].play(4);
+        roulettes[rouletteId].play();
     }
     return;
 }
