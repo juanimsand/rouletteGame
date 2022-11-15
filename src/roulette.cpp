@@ -3,7 +3,6 @@
 
 Roulette::Roulette(int _id)
 {
-    outputManager = nullptr;
     id = _id;
     initializeRouletteNumbers();
 }
@@ -35,16 +34,12 @@ void Roulette::open()
 {
     if(!enabled){
         enabled = true;
-        if(outputManager){
-            // show roulette is opened message
-            outputManager->showRouletteOpened(id);
-        }
+        // show roulette is opened message
+        std::cout << "Roulette " << id << " opened!" << std::endl;
     }
     else{
-        if(outputManager){
-            // show roulette is already open message
-            outputManager->showRouletteAlreadyOpen(id);
-        }
+        // show roulette is already open message
+        std::cout << "Roulette " << id << " is already open!" << std::endl;
     }
     return;
 }
@@ -55,16 +50,11 @@ void Roulette::close()
         // tells players on roulette
         tellPlayersToGetOut();
         enabled = false;
-        if(outputManager){
-            // show roulette is closed message
-            outputManager->showRouletteClosed(id);
-        }
+        // show roulette is closed message
+        std::cout << "Roulette " << id << " closed!" << std::endl;
     }
     else{
-        if(outputManager){
-            // show roulette is already close message
-            outputManager->showRouletteAlreadyClose(id);
-        }
+        std::cout << "Roulette " << id << " is already close!" << std::endl;
     }
     return;
 }
@@ -79,69 +69,48 @@ int Roulette::getRouletteId() const
     return id;
 }
 
-void Roulette::setOutputManager(OutputManager& outputMan)
-{
-    outputManager = &outputMan;
-    return;
-}
-
 void Roulette::play(int plays)
 {
     if(!enabled){
-        if(outputManager){
-            // throw output showing error and return
-            outputManager->showCouldNotPlayDueToClose(id);
-        }
+        // throw output showing error and return
+        std::cout << "Roulette " << id << " is closed, could not play." << std::endl;
         return;
     }
     if(players.empty()){
-        if(outputManager){
-            // throw output showing error and return
-            outputManager->showCouldNotPlayDueToLackOfPlayers(id);
-        }
+        // throw output showing error and return
+        std::cout << "Roulette " << id << " has no players to play." << std::endl;
         return;
     }
-    if(outputManager){
-        outputManager->showStartingRoulette(id);
-    }
+    std::cout << "Starting roulette number " << id << ".." << std::endl;
     for(int i = 0; i < plays; i++){ // play sequence for every iteration
-        if(outputManager){  // show play number
-            outputManager->showRoulettePlayNumber(id, (i + 1));
-        }
+        // show play number
+        std::cout << "Roulette " << id << " play number " << (i + 1) << std::endl;
         if(i == (plays - 1)){
-            if(outputManager){
-                outputManager->showLastRoulettePlay(id);
-            }
+            std::cout << "Last roulette " << id << " play.." << std::endl;
         }
-        if(outputManager){  // show ask for bets
-            outputManager->showPlaceBets();
-        }
+        // show place bets
+        std::cout << PLACE_YOUR_BETS << std::endl;
         for(int j = 0; j < players.size(); j++){    // ask for bets
             players[j]->bet();
         }
-        if(outputManager){  // show spinning state
-            outputManager->showNoMoreBets();
-            outputManager->showRouletteSpinning();
-        }
+        // show spinning state
+        std::cout << NO_MORE_BETS << std::endl;
+        std::cout << ROULETTE_SPINNING << std::endl;
         int number = spin();
         if(number < 0){
-            if(outputManager){  //show error while spinning, nobody won, nobody lost and continue
-                outputManager->showBallFlangOut();
-            }
+            std::cout << BALL_FLANG_OUT_ROULETTE << std::endl;
             continue;
         }
         if(number == 0){    // then nobody won
-            if(outputManager){  // show 0 number status
-                outputManager->showHouseWins();
-            }
+            // show house wins
+            std::cout << HOUSE_WINS << std::endl;
             nobodyWon();
             // show players notes
             showPlayersNotes();
             continue;
         }
-        if(outputManager){  // show number information
-            outputManager->showWinnerNumber(number, rouletteNumbers[number].red);
-        }
+        // show number
+        rouletteNumbers[number].red ? std::cout << number << ", red!" << std::endl : std::cout << number << ", black!" << std::endl;
         checkWinners(rouletteNumbers[number]);
         // show players notes
         showPlayersNotes();
@@ -198,9 +167,7 @@ void Roulette::checkWinners(rouletteNumber _number)
                 _number.red ? players[i]->lost() : players[i]->won();
                 break;
             default:
-                if(outputManager){
-                    outputManager->showBadPlayerType();
-                }
+                std::cout << BAD_PLAYER_TYPE << std::endl;
                 break;
         }
     }
@@ -225,18 +192,18 @@ void Roulette::tellPlayersToGetOut()
 
 void Roulette::showNumberInformation(rouletteNumber _number)
 {
-    if(outputManager){  // show number information
-        outputManager->showNumberInfo(_number.number, _number.red, _number.even, _number.minor);
-    }
+    // show number information
+    std::cout << "*** Number " << _number.number << " information ***" << std::endl;
+    _number.red ? std::cout << RED_STRING << std::endl : std::cout << BLACK_STRING << std::endl;
+    _number.even ? std::cout << EVEN_STRING << std::endl : std::cout << ODD_STRING << std::endl;
+    _number.minor ? std::cout << MINOR_STRING << std::endl : std::cout << MAJOR_STRING << std::endl;
     return; 
 }
 
 void Roulette::showPlayersNotes()
 {
     // show players notes
-    if(outputManager){
-        outputManager->showPlayerNotesTitle();
-    }
+    std::cout << SHOWING_PLAYER_NOTES << std::endl;
     for(int j = 0; j < players.size(); j++){
         players[j]->showNotes();
     }
