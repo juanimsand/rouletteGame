@@ -26,6 +26,9 @@ Oh, those players are lucky, they have infinite money to bet :).\n\n\
 --help | -h\t\t\t\t\tPrints help.\n\n\
 --toFile\t\t\t\t\tSave output to file ../output/rouletteGameOutput.txt. If no argument is set, print output to console.\n\n"
 
+//
+#define NOT_VALID_ID -1
+
 // casino
 #define CASINO_ALREADY_OPENED "Casino is already open!"
 #define OPENING_CASINO "Opening casino!"
