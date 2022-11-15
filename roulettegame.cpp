@@ -145,6 +145,7 @@ int main(int argc, char *argv[])
         std::cout.rdbuf(coutbuf); // reset to standard output again
         output.close();
         std::cout << "File successfully closed!" << std::endl;
+        showPlayersBalance(playersPtrShr);
     }
     std::cout << GOOD_BYE_TEXT << std::endl;
     return EXIT_SUCCESS;
