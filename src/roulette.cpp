@@ -3,7 +3,14 @@
 
 Roulette::Roulette(int _id)
 {
-    id = _id;
+    if (_id < 0)
+    {
+        id = NOT_VALID_ID;
+    }
+    else
+    {
+        id = _id;
+    }
     initializeRouletteNumbers();
 }
 

@@ -28,10 +28,10 @@ private:
     bool opened = false;             // keep track if casino is open or not! maybe is better to initialized it on constructor
     std::vector<Roulette> roulettes; // maybe is beter to set it in the constructor
 
-    void initializeGames();
-    void initializeRoulettes();
-    void closeGames();
-    void closeRoulettes();
+    void initializeGames();     // intializes every Casino game (for now, just roulettes)
+    void initializeRoulettes(); // initializes every Roulette game in Casino (only 1 roulette)
+    void closeGames();          // closes all games (for now, just roulettes)
+    void closeRoulettes();      // close every Roulette game in casino (only 1 roulette)
 };
 
 #endif

@@ -60,7 +60,7 @@ void showPlayersBalance(std::vector<std::shared_ptr<RoulettePlayer>> &players)
     for (int i = 0; i < players.size(); i++)
     {
         totalPlayersBalance += players[i]->getPlayerBalance();
-        std::cout << players[i]->name << " balance is: " << players[i]->getPlayerBalance() << std::endl;
+        std::cout << players[i]->getPlayerName() << " balance is: " << players[i]->getPlayerBalance() << std::endl;
     }
     std::cout << "Total (" << players.size() << ") players balance is: " << totalPlayersBalance << std::endl;
     return;

@@ -11,6 +11,16 @@ RoulettePlayer::RoulettePlayer(rouletteBetType _type, int _playerId, std::string
 
 RoulettePlayer::~RoulettePlayer() {}
 
+int RoulettePlayer::getPlayerId() const
+{
+    return playerId;
+}
+
+std::string RoulettePlayer::getPlayerName() const
+{
+    return name;
+}
+
 void RoulettePlayer::changeBetType(rouletteBetType newBetType)
 {
     betType = newBetType;

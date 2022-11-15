@@ -50,7 +50,7 @@ bool Casino::addPlayerToRoulette(std::shared_ptr<RoulettePlayer> &player)
     }
     if (roulettes.empty())
     {
-        std::cout << "Sorry " << player->name << ", there are no roulettes availables at the moment." << std::endl;
+        std::cout << "Sorry " << player->getPlayerName() << ", there are no roulettes availables at the moment." << std::endl;
         return couldJoin;
     }
     for (int i = 0; i < roulettes.size(); i++)
@@ -60,14 +60,14 @@ bool Casino::addPlayerToRoulette(std::shared_ptr<RoulettePlayer> &player)
             couldJoin = roulettes[i].addPlayer(player);
             if (couldJoin)
             {
-                std::cout << player->name << " has joined roulette " << roulettes[i].getRouletteId() << "." << std::endl;
+                std::cout << player->getPlayerName() << " has joined roulette " << roulettes[i].getRouletteId() << "." << std::endl;
                 break;
             }
         }
     }
     if (!couldJoin)
     {
-        std::cout << "Sorry " << player->name << ", no roulette open at the moment." << std::endl;
+        std::cout << "Sorry " << player->getPlayerName() << ", no roulette open at the moment." << std::endl;
     }
     return couldJoin;
 }
@@ -116,9 +116,12 @@ void Casino::initializeGames()
 
 void Casino::initializeRoulettes()
 {
+    /*
     int newRouletteId = roulettes.size();
     Roulette roulette(newRouletteId);
     roulettes.push_back(roulette);
+    */
+    roulettes.push_back(Roulette(roulettes.size()));
     return;
 }
 
