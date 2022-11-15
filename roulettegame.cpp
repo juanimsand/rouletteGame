@@ -75,7 +75,7 @@ int main(int argc, char* argv[])
 {
 
     std::ofstream output;
-    std::streambuf *coutbuf;
+    std::streambuf* coutbuf;
 
     std::cout << WELCOME_TEXT << std::endl;
     if(argc > 2){
