@@ -116,11 +116,6 @@ void Casino::initializeGames()
 
 void Casino::initializeRoulettes()
 {
-    /*
-    int newRouletteId = roulettes.size();
-    Roulette roulette(newRouletteId);
-    roulettes.push_back(roulette);
-    */
     roulettes.push_back(Roulette(roulettes.size()));
     return;
 }
