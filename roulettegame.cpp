@@ -107,6 +107,8 @@ int main(int argc, char* argv[])
         players[i].setOutputManager(outputManager);
     }
     
+    // add new line to console output
+    outputManager.forceOutputToConsole("\n");
     // open casino
     myCasino.open();
     // open roulettes in casino
