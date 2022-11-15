@@ -1,11 +1,11 @@
 #ifndef ROULETTEPLAYER_H
 #define ROULETTEPLAYER_H
 
-//#include "player.h"
 #include <string>
 #include <vector>
 #include <iostream>
-#include "outputmanager.h"
+
+#include "appgeneralmacros.h"
 
 #define INITIAL_BALANCE         -10
 #define INITIAL_BET             5
@@ -31,8 +31,6 @@ class RoulettePlayer {
         RoulettePlayer(rouletteBetType _type, int _playerId, std::string _name);
         ~RoulettePlayer();
 
-        void setOutputManager(OutputManager& outputMan);
-
 		int playerId;		// player id for let Casino keep track of players
 		std::string name;	// lets name players as Player A, Player B, etc.
 
@@ -42,22 +40,14 @@ class RoulettePlayer {
 		void lost();
         void bet();	// allows the player to bet, expected call from roullete
         void getOutOfRoulette();    // player will leave roulette
-        int getPlayerBalance() const;    // 
-
-		// check if it is ok here, or maybe in an output manager
+        int getPlayerBalance() const;
+		
 		void showNotes();
-		void showWinner();
-		void showLooser();
-		void showStatus();
-        void showBalance();		
-
         
     private:
-
-        OutputManager* outputManager;
         
-		rouletteBetType betType;	// initialize it in constructor
-		std::vector<int> notes;		// initialize it in constructor
+		rouletteBetType betType;
+		std::vector<int> notes;
 		int currentRouletteBet;
 		int rouletteBalance;
 

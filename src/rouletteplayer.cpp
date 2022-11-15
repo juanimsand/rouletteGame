@@ -2,7 +2,6 @@
 
 RoulettePlayer::RoulettePlayer(rouletteBetType _type, int _playerId, std::string _name)
 {
-    outputManager = nullptr;
     betType = _type;
     playerId = _playerId;
     name = _name;
@@ -18,12 +17,6 @@ void RoulettePlayer::changeBetType(rouletteBetType newBetType)
     return;
 }
 
-void RoulettePlayer::setOutputManager(OutputManager& outputMan)
-{
-    outputManager = &outputMan;
-    return;
-}
-
 rouletteBetType RoulettePlayer::getBetType() const
 {
     return betType;
@@ -31,20 +24,16 @@ rouletteBetType RoulettePlayer::getBetType() const
 
 void RoulettePlayer::won()
 {
-    if(outputManager){
-        // show won message
-        outputManager->showPlayerWon(name, playerId, getBetTypeString(), currentRouletteBet);
-    }
+    // show won message
+    std::cout << name << " (id: " << playerId << ") bet on " << getBetTypeString() << " and won " << currentRouletteBet << std::endl;
     notes.push_back(currentRouletteBet);
     return;
 }
 
 void RoulettePlayer::lost()
 {
-    if(outputManager){
-        // show lost message
-        outputManager->showPlayerLost(name, playerId, getBetTypeString(), currentRouletteBet);
-    }
+    // show lost message
+    std::cout << name << " (id: " << playerId << ") bet on " << getBetTypeString() << " and lost " << currentRouletteBet << std::endl;
     if(notes.size() > 0){
         if(notes.size() == 1){
             notes.erase(notes.begin());
@@ -60,10 +49,8 @@ void RoulettePlayer::lost()
 void RoulettePlayer::bet()
 {
     if(notes.empty()){
-        if(outputManager){
-            // show player is out of money
-            outputManager->showPlayerOutOfMoney(name);
-        }
+        // show player is out of money
+        std::cout << name << " is out of money!" << std::endl;
         resetNotes();
     }
     else if(notes.size() == 1){
@@ -71,10 +58,8 @@ void RoulettePlayer::bet()
             currentRouletteBet = notes[0];
         }
         else{
-            if(outputManager){
-                // show player bet is out of range
-                outputManager->showPlayerBetOutOfRange(name, notes[0]);
-            }            
+            // show player bet is out of range
+            std::cout << name << " bet " << notes[0] << " is out of range!" << std::endl;
             updateRouletteBalance(notes[0]);
             resetNotes();
         }
@@ -85,10 +70,7 @@ void RoulettePlayer::bet()
             currentRouletteBet = possibleNextBet;
         }
         else{
-            if(outputManager){
-                // show player bet is out of range
-                outputManager->showPlayerBetOutOfRange(name, possibleNextBet);
-            } 
+            std::cout << name << " bet " << notes[0] << " is out of range!" << std::endl;
             updateTotalNotesToBalance();
             resetNotes();
         }
@@ -110,9 +92,21 @@ int RoulettePlayer::getPlayerBalance() const
 
 void RoulettePlayer::showNotes()
 {
-    if(outputManager){
-        // show notes
-        outputManager->showPlayerNotes(name, notes);
+    // show notes
+    std::cout << name << " notes are: ";
+    if(notes.empty()){
+        std::cout << "{ }" << std::endl;
+        return;
+    }
+    std::cout << "{ ";
+    for(int i = 0; i < notes.size(); i++){
+        std::cout << notes[i];
+        if(i != (notes.size() - 1)){
+            std::cout << ", ";
+        }
+        else{
+            std::cout << " }" << std::endl;
+        }
     }
     return;
 }
@@ -128,9 +122,7 @@ void RoulettePlayer::resetNotes()
 void RoulettePlayer::updateRouletteBalance(int addToBalance)
 {
     rouletteBalance += addToBalance;
-    if(outputManager){
-        outputManager->showPlayerBalanceUpdated(name, rouletteBalance);
-    }
+    std::cout << name << " balance updated. Balance is: " << rouletteBalance << std::endl;
     return;
 }
 
@@ -167,9 +159,7 @@ std::string RoulettePlayer::getBetTypeString()
             typeString = BLACK_STRING;
             break;
         default:
-            if(outputManager){
-                outputManager->showPlayerBetTypeUndefined(name);
-            }
+            std::cout << name << " has bet type undefined!" << std::endl;
             break;
     }
     return typeString;

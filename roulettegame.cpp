@@ -1,5 +1,8 @@
 #include "casino.h"
-#include "outputmanager.h"
+#include "appgeneralmacros.h"
+
+#include <fstream>
+#include <cstring>
 
 bool validArgument(std::string argument)
 {
@@ -56,59 +59,67 @@ void joinPlayersToRoulette(Casino& myCasino, std::vector<RoulettePlayer>& player
     return;
 }
 
-void showPlayersBalance(std::vector<RoulettePlayer>& players, OutputManager& outputManager)
+void showPlayersBalance(std::vector<RoulettePlayer>& players)
 {
     // show each player balance and total players balance
     int totalPlayersBalance = 0;
     for(int i = 0; i < players.size(); i++){
         totalPlayersBalance += players[i].getPlayerBalance();
-        outputManager.showPlayerBalance(players[i].name, players[i].getPlayerBalance());
+        std::cout << players[i].name << " balance is: " << players[i].getPlayerBalance() << std::endl;
     }
-    outputManager.showPlayersTotalBalance(players.size(), totalPlayersBalance);
+    std::cout << "Total (" << players.size() << ") players balance is: " << totalPlayersBalance << std::endl;
     return;
 }
 
 int main(int argc, char* argv[])
 {
-    OutputManager outputManager;
-    outputManager.showWelcomeMessage();
+
+    std::ofstream output;
+    std::streambuf *coutbuf;
+
+    std::cout << WELCOME_TEXT << std::endl;
     if(argc > 2){
-        outputManager.showBadArguments();
+        std::cout << BAD_ARGUMENTS << std::endl;
         // show error information
-        outputManager.showErrorInformation(E2BIG);
+        std::cout << "Error number: " << E2BIG << std::endl;
+        std::cout << "Error description: " << strerror(E2BIG) << std::endl;
         return EXIT_FAILURE;
     }
     if(argc == 2){
         if(!validArgument(argv[1])){
-            outputManager.showBadArguments();
+            std::cout << BAD_ARGUMENTS << std::endl;
             // show error information
-            outputManager.showErrorInformation(EINVAL);
+            std::cout << "Error number: " << EINVAL << std::endl;
+            std::cout << "Error description: " << strerror(EINVAL) << std::endl;
             return EXIT_FAILURE;
         }
         if(helperArgument(argv[1])){
-            outputManager.showHelp();
+            std::cout << HELPER_TEXT << std::endl;
             return EXIT_SUCCESS;
         }
         if(outputToFile(argv[1])){
             // set output to file
-            outputManager.setOutputType(true);
+            output.open(OUTPUT_FILE_PATH);
+            if(output.is_open()){
+                std::cout << "File successfully opened!" << std::endl;
+                std::cout << "Writing output to file located in: " << OUTPUT_FILE_PATH << std::endl;
+                coutbuf = std::cout.rdbuf(); //save old buf
+                std::cout.rdbuf(output.rdbuf()); //redirect std::cout to OUTPUT_FILE_PATH!
+            }
+            else{
+                std::cout << "File could not be opened! Writing output to console.." << std::endl;
+            }
         }
     }
 
-
+    std::cout << "Initializing game..." << std::endl;
     // initialize objects and data structures
     Casino myCasino;
     std::vector<RoulettePlayer> players;
     createSixRoulettePlayers(players);
-
-    // set output managers
-    myCasino.setOutputManager(outputManager);
-    for(int i = 0; i < players.size(); i++){
-        players[i].setOutputManager(outputManager);
-    }
     
-    // add new line to console output
-    outputManager.forceOutputToConsole("\n");
+    // show initialized, starting
+    std::cout << "Game initialized.." << std::endl << "Starting game.." << std::endl;
     // open casino
     myCasino.open();
     // open roulettes in casino
@@ -121,7 +132,12 @@ int main(int argc, char* argv[])
     myCasino.close();
 
     // show relevant game information
-    showPlayersBalance(players, outputManager);
-    outputManager.showGoodByeMessage();
+    showPlayersBalance(players);
+    if(output.is_open()){
+        std::cout.rdbuf(coutbuf); //reset to standard output again
+        output.close();
+        std::cout << "File successfully closed!" << std::endl;
+    }
+    std::cout << GOOD_BYE_TEXT << std::endl;
     return EXIT_SUCCESS;
 }
