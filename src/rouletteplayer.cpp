@@ -154,10 +154,10 @@ std::string RoulettePlayer::getBetTypeString()
         case rouletteBetType::ODD:
             typeString = ODD_STRING;
             break;
-        case rouletteBetType::MINOR:
+        case rouletteBetType::_1_TO_18:
             typeString = MINOR_STRING;
             break;
-        case rouletteBetType::MAJOR:
+        case rouletteBetType::_19_TO_36:
             typeString = MAJOR_STRING;
             break;
         case rouletteBetType::RED:

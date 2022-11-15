@@ -14,18 +14,11 @@
 #define RANGE_MIN               0
 #define RANGE_MAX               36
 
-#define EVEN_STRING             "even"
-#define ODD_STRING              "odd"
-#define RED_STRING              "red"
-#define BLACK_STRING            "black"
-#define MINOR_STRING            "minor"
-#define MAJOR_STRING            "major"
-
 typedef enum rouletteBetType{
     EVEN            = 0,
     ODD,
-    MINOR,
-    MAJOR,
+    _1_TO_18,
+    _19_TO_36,
     RED,
     BLACK
 }rouletteBetType;

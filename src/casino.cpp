@@ -10,7 +10,6 @@ Casino::~Casino(){}
 
 void Casino::open()
 {
-    std::cout << std::endl;
     if(opened){
         if(outputManager){
             outputManager->showCasinoAlreadyOpen();

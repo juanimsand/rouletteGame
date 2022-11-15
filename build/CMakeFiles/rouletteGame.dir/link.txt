@@ -1,1 +1,0 @@
-/usr/bin/c++     CMakeFiles/rouletteGame.dir/rouletteGame.cpp.o CMakeFiles/rouletteGame.dir/src/outputmanager.cpp.o CMakeFiles/rouletteGame.dir/src/casino.cpp.o CMakeFiles/rouletteGame.dir/src/roulette.cpp.o CMakeFiles/rouletteGame.dir/src/rouletteplayer.cpp.o  -o rouletteGame 

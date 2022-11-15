@@ -32,12 +32,12 @@ bool outputToFile(std::string argument)
 
 void createSixRoulettePlayers(std::vector<RoulettePlayer>& players)
 {
-    RoulettePlayer player1(EVEN,    1, "Player A");
-    RoulettePlayer player2(ODD,     2, "Player B");
-    RoulettePlayer player3(MINOR,   3, "Player C");
-    RoulettePlayer player4(MAJOR,   4, "Player D");
-    RoulettePlayer player5(RED,     5, "Player E");
-    RoulettePlayer player6(BLACK,   6, "Player F");
+    RoulettePlayer player1(RED,         1, "Player A");
+    RoulettePlayer player2(BLACK,       2, "Player B");
+    RoulettePlayer player3(_19_TO_36,   3, "Player C");
+    RoulettePlayer player4(_1_TO_18,    4, "Player D");
+    RoulettePlayer player5(EVEN,        5, "Player E");
+    RoulettePlayer player6(ODD,         6, "Player F");
 
     players.push_back(player1);
     players.push_back(player2);
@@ -107,6 +107,8 @@ int main(int argc, char* argv[])
         players[i].setOutputManager(outputManager);
     }
     
+    // add new line to console output
+    outputManager.forceOutputToConsole("\n");
     // open casino
     myCasino.open();
     // open roulettes in casino
