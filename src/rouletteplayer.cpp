@@ -9,7 +9,7 @@ RoulettePlayer::RoulettePlayer(rouletteBetType _type, int _playerId, std::string
     resetNotes();
 }
 
-RoulettePlayer::~RoulettePlayer(){}
+RoulettePlayer::~RoulettePlayer() {}
 
 void RoulettePlayer::changeBetType(rouletteBetType newBetType)
 {
@@ -34,11 +34,14 @@ void RoulettePlayer::lost()
 {
     // show lost message
     std::cout << name << " (id: " << playerId << ") bet on " << getBetTypeString() << " and lost " << currentRouletteBet << std::endl;
-    if(notes.size() > 0){
-        if(notes.size() == 1){
+    if (notes.size() > 0)
+    {
+        if (notes.size() == 1)
+        {
             notes.erase(notes.begin());
         }
-        else{
+        else
+        {
             notes.pop_back();
             notes.erase(notes.begin());
         }
@@ -48,28 +51,35 @@ void RoulettePlayer::lost()
 
 void RoulettePlayer::bet()
 {
-    if(notes.empty()){
+    if (notes.empty())
+    {
         // show player is out of money
         std::cout << name << " is out of money!" << std::endl;
         resetNotes();
     }
-    else if(notes.size() == 1){
-        if((notes[0] <= MAX_BET) && (notes[0] >= MIN_BET)){   // bet is valid
+    else if (notes.size() == 1)
+    {
+        if ((notes[0] <= MAX_BET) && (notes[0] >= MIN_BET))
+        { // bet is valid
             currentRouletteBet = notes[0];
         }
-        else{
+        else
+        {
             // show player bet is out of range
             std::cout << name << " bet " << notes[0] << " is out of range!" << std::endl;
             updateRouletteBalance(notes[0]);
             resetNotes();
         }
     }
-    else{
+    else
+    {
         int possibleNextBet = notes[0] + notes[notes.size() - 1];
-        if((possibleNextBet <= MAX_BET) && (possibleNextBet >= MIN_BET)){   // bet is valid
+        if ((possibleNextBet <= MAX_BET) && (possibleNextBet >= MIN_BET))
+        { // bet is valid
             currentRouletteBet = possibleNextBet;
         }
-        else{
+        else
+        {
             std::cout << name << " bet " << notes[0] << " is out of range!" << std::endl;
             updateTotalNotesToBalance();
             resetNotes();
@@ -94,17 +104,21 @@ void RoulettePlayer::showNotes()
 {
     // show notes
     std::cout << name << " notes are: ";
-    if(notes.empty()){
+    if (notes.empty())
+    {
         std::cout << "{ }" << std::endl;
         return;
     }
     std::cout << "{ ";
-    for(int i = 0; i < notes.size(); i++){
+    for (int i = 0; i < notes.size(); i++)
+    {
         std::cout << notes[i];
-        if(i != (notes.size() - 1)){
+        if (i != (notes.size() - 1))
+        {
             std::cout << ", ";
         }
-        else{
+        else
+        {
             std::cout << " }" << std::endl;
         }
     }
@@ -129,7 +143,8 @@ void RoulettePlayer::updateRouletteBalance(int addToBalance)
 void RoulettePlayer::updateTotalNotesToBalance()
 {
     int total = 0;
-    for(int i = 0; i < notes.size(); i++){
+    for (int i = 0; i < notes.size(); i++)
+    {
         total += notes[i];
     }
     updateRouletteBalance(total);
@@ -139,28 +154,29 @@ void RoulettePlayer::updateTotalNotesToBalance()
 std::string RoulettePlayer::getBetTypeString()
 {
     std::string typeString = "undefined";
-    switch (betType){
-        case rouletteBetType::EVEN:
-            typeString = EVEN_STRING;
-            break;
-        case rouletteBetType::ODD:
-            typeString = ODD_STRING;
-            break;
-        case rouletteBetType::_1_TO_18:
-            typeString = MINOR_STRING;
-            break;
-        case rouletteBetType::_19_TO_36:
-            typeString = MAJOR_STRING;
-            break;
-        case rouletteBetType::RED:
-            typeString = RED_STRING;
-            break;
-        case rouletteBetType::BLACK:
-            typeString = BLACK_STRING;
-            break;
-        default:
-            std::cout << name << " has bet type undefined!" << std::endl;
-            break;
+    switch (betType)
+    {
+    case rouletteBetType::EVEN:
+        typeString = EVEN_STRING;
+        break;
+    case rouletteBetType::ODD:
+        typeString = ODD_STRING;
+        break;
+    case rouletteBetType::_1_TO_18:
+        typeString = MINOR_STRING;
+        break;
+    case rouletteBetType::_19_TO_36:
+        typeString = MAJOR_STRING;
+        break;
+    case rouletteBetType::RED:
+        typeString = RED_STRING;
+        break;
+    case rouletteBetType::BLACK:
+        typeString = BLACK_STRING;
+        break;
+    default:
+        std::cout << name << " has bet type undefined!" << std::endl;
+        break;
     }
     return typeString;
 }
