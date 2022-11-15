@@ -35,22 +35,14 @@ On root you should find:
 * include/
     * appGeneralMacros.h
     * casino.h
-    * outputmanager.h
     * roulette.h
     * rouletteplayer.h
 * src/
     * casino.cpp
-    * outputmanager.cpp
     * roulette.cpp
     * rouletteplayer.cpp
 * build/
-    * CMakeFiles/
-    * cmake_install.cmake
-    * CMakeCache.txt
-    * MakeFile
-    * rouletteGame
 * output/
-    * rouletteGameOutput.txt
 * rouletteGame.cpp
 * CMakeLists.txt
 
@@ -71,5 +63,5 @@ For build this project you must have CMake (and make) installed. Follow this ste
 
 ## How to run
 
-<p>In build folder you should find the rouletteGame executable.</p>
+<p>Follow build process steps for generate executable file, it should be located in build directory.</p>
 <p>A useful help text is displayed if you execute it with --help or -h as argument.</p>
