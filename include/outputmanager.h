@@ -6,7 +6,7 @@
 #include <cstring>
 #include <vector>
 
-#include "appGeneralMacros.h"
+#include "appgeneralmacros.h"
 
 class OutputManager{
     
