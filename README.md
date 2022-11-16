@@ -46,6 +46,7 @@ On root you should find:
 * CMakeLists.txt
 
 ### Build
+#### Read section [Fixes]
 To build this project you must have CMake (and make) installed. Follow this steps:
 
 1. Go to repository root directory.
@@ -63,3 +64,7 @@ To build this project you must have CMake (and make) installed. Follow this step
 
 Follow the [building process steps](#build) for generate the executable file, it should be located in build/ directory.
 A useful help text is displayed if you execute it with `--help` or `-h` as argument.
+
+## Fixes
+
+1. For test how the application works I cloned this repository from another enviroment (another PC with Ubuntu 18.04). When I followed the [building process steps](#build), step 4 failed. The failure executing `cmake ../` was cause by line `target_compile_features(rouletteGame PRIVATE cxx_std_20)` of CMakeLists.txt, so I changed it for `target_compile_features(rouletteGame PRIVATE cxx_std_17)`. Also I updated the line `cmake_minimum_required(VERSION 3.5)` by `cmake_minimum_required(VERSION 3.10)`. With these changes I could build and execute the application without problems.
