@@ -10,16 +10,16 @@ After each spin, the house pays the bet to the winning players. Then, if the gam
 <p>Each player has their own notes to calculate how much they will bet on each roulette spin. Starting notes: { 1, 2, 3, 4 }.</p>
 <p>Bet calculation: Addition of first and last number in notes. First bet will be 1 + 4 = 5.</p>
 
-* **Won:**&nbsp;&nbsp;&nbsp;&nbsp;The amount earned is added at the end of notes. If bet is 1 + 4 = 5, then notes are { 1, 2, 3, 4, 5 }
+* **Won:**&nbsp;&nbsp;&nbsp;&nbsp;The amount earned is added at the end of notes. If bet is 1 + 4 = 5, then notes will be { 1, 2, 3, 4, 5 }
 * **Lost:**&nbsp;&nbsp;&nbsp;&nbsp;The first and last items from notes are deleted. So, if the player bets based on the initial notes { 1, 2, 3, 4 } and lose, then his notes will be { 2, 3 }.
 * **Special case:**&nbsp;&nbsp;&nbsp;&nbsp;If only one item remains in the notes, then the player bet that item.
 
 &nbsp;
-Bets has a minimum of 5 and a maximum of 4000.
-If a player cannot bet because the bet is out of range or there is no item in the notes, he starts over with the initial notes { 1, 2, 3, 4 }.
+<p>Bets has a minimum of 5 and a maximum of 4000.</p>
+<p>If a player cannot bet because the bet is out of range or there is no item in the notes, he starts over with the initial notes { 1, 2, 3, 4 }.</p>
 
-When the game ends, the balance of each player and the total (of 6 players) is showed.
-Oh, players are lucky, they have infinite money to bet :).
+<p>When the game ends, the balance of each player and the total (of 6 players) is showed.</p>
+<p>Oh, players are lucky, they have infinite money to bet :).</p>
 
 ## Project
 This project was developed in C++ using:
