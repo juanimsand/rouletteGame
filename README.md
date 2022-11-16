@@ -46,7 +46,7 @@ On root you should find:
 * CMakeLists.txt
 
 ### Build
-#### Read section [Fixes]
+
 To build this project you must have CMake (and make) installed. Follow this steps:
 
 1. Go to repository root directory.
@@ -60,6 +60,7 @@ To build this project you must have CMake (and make) installed. Follow this step
     * `make`
 6. You just generated the rouletteGame application executable, congrats!
 
+If you have any problem, reading section [Fixes](#fixes) could help.
 ## How to run
 
 Follow the [building process steps](#build) for generate the executable file, it should be located in build/ directory.
