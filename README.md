@@ -3,24 +3,23 @@ Simple C++ project of roulette game simulation.
 
 ## What rouletteGame application does
 
-Simulate 10000 plays of 6 players playing the famous roulette game!
-Each player bet to: *even*, *odd*, *1 to 18*, *19 to 36*, *red* or *black*, respectively!
-After 10000 plays, total balance of 6 players is showed and quit!
+The application simulates the famous roulette game. The simulation consists of 10000 spins with 6 people playing at the same time. Each person bets on *red*, *black*, *1 to 18*, *19 to 36*, *even* and *odd* throughout the simulation.
+After each spin, the house pays the bet to the winning players. Then, if the game must continue, the players return to place their respective bets.
 
 ### Bet method
-<p>Each player has own notes for calculate how much they will bet on each roulette play, starting notes: { 1, 2, 3, 4 }.</p>
-<p>Bet calculation: addition of first and last number in notes. First bet will be 1 + 4 = 5.</p>
+<p>Each player has their own notes to calculate how much they will bet on each roulette spin. Starting notes: { 1, 2, 3, 4 }.</p>
+<p>Bet calculation: Addition of first and last number in notes. First bet will be 1 + 4 = 5.</p>
 
 * **Won:**&nbsp;&nbsp;&nbsp;&nbsp;The amount won is added at the end of notes. If bet is 1 + 4 = 5, then notes are { 1, 2, 3, 4, 5 }
-* **Lost:**&nbsp;&nbsp;&nbsp;&nbsp;The first and last items from notes are deleted.
+* **Lost:**&nbsp;&nbsp;&nbsp;&nbsp;The first and last items from notes are deleted. So, if bet with initial notes { 1, 2, 3, 4 }, then the notes will be { 2, 3 }.
 * **Special case:**&nbsp;&nbsp;&nbsp;&nbsp;If only one item remains in notes, then the player bet that item.
 
-<p>&nbsp;</p>
-<p>Bets has a minimum of 5 and a maximum of 4000.</p>
-<p>If a player could not bet because the bet is out of range or no item left in notes, starts again with initial notes { 1, 2, 3, 4 }.</p>
+&nbsp;
+Bets has a minimum of 5 and a maximum of 4000.
+If a player cannot bet because the bet is out of range or there is no item in the notes, he starts over with the initial notes { 1, 2, 3, 4 }.
 
-<p>When the game ends, balance of each player and total (of 6 players) is showed.</p>
-<p>Oh, players are lucky, they have infinite money to bet :).</p>
+When the game ends, the balance of each player and the total (of 6 players) is showed.
+Oh, players are lucky, they have infinite money to bet :).
 
 ## Project
 This project was developed in C++ using:
@@ -33,7 +32,7 @@ This project was developed in C++ using:
 ### Repository structure
 On root you should find:
 * include/
-    * appGeneralMacros.h
+    * appgeneralmacros.h
     * casino.h
     * roulette.h
     * rouletteplayer.h
@@ -47,15 +46,14 @@ On root you should find:
 * CMakeLists.txt
 
 ### Build
-<p>In the case that you want to change something in project, you can do it but then you must rebuild the project, if that is your case keep reading.</p>
-For build this project you must have CMake (and make) installed. Follow this steps:
+To build this project you must have CMake (and make) installed. Follow this steps:
 
 1. Go to repository root directory.
 2. Go to build directory:
     * `ls build/`
-3. Clean directory. **Be careful, you are going to delete everything in folder, be sure to be at build directory (and do not forget the . preceding the / )**:
+3. Clean directory. **Be careful, you are going to delete everything in folder, be sure to be at build directory (and do not forget the . preceding the / )** :
     * `rm -r ./*`
-4. Run cmake, this should generate the new files in build folder:
+4. Run cmake, this should generate new files in build folder:
     * `cmake ../`
 5. Run make, this should generate application executable:
     * `make`
@@ -63,5 +61,5 @@ For build this project you must have CMake (and make) installed. Follow this ste
 
 ## How to run
 
-<p>Follow build process steps for generate executable file, it should be located in build directory.</p>
-<p>A useful help text is displayed if you execute it with --help or -h as argument.</p>
+Follow the [building process steps](#build) for generate the executable file, it should be located in build/ directory.
+A useful help text is displayed if you execute it with `--help` or `-h` as argument.
