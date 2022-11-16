@@ -132,7 +132,6 @@ int main(int argc, char *argv[])
     {
         myCasino.addPlayerToRoulette(playersPtrShr[i]);
     }
-    // joinPlayersToRoulette(myCasino, players);
     //  start playing casino's roulettes
     myCasino.playRoulettes();
     // close casino

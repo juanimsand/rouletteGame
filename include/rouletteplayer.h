@@ -35,7 +35,7 @@ public:
     rouletteBetType getBetType() const;
     void won();
     void lost();
-    void bet();              // allows the player to bet, expected call from roullete
+    void bet();              // allows the player to bet in roulette (expected call from roullete)
     void getOutOfRoulette(); // player will leave roulette
     int getPlayerBalance() const;
     int getPlayerId() const;
@@ -47,12 +47,12 @@ private:
     int playerId;     // player id for let Casino keep track of players
     std::string name; // lets name players as Player A, Player B, etc.
     rouletteBetType betType;
-    std::vector<int> notes;
-    int currentRouletteBet;
-    int rouletteBalance;
+    std::vector<int> notes; // notes for store earned money and for determine how much the player will bet in next roulette spin
+    int currentRouletteBet; // current player bet
+    int rouletteBalance;    // keep track of roulette player balance
 
-    void resetNotes();
-    void updateRouletteBalance(int addToBalance);
+    void resetNotes();                            // set notes with initial value { 1, 2, 3, 4 }
+    void updateRouletteBalance(int addToBalance); // add argument to roulette balance
     void updateTotalNotesToBalance();
     std::string getBetTypeString();
 };
