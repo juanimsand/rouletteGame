@@ -3,16 +3,16 @@ Simple C++ project of roulette game simulation.
 
 ## What rouletteGame application does
 
-The application simulates the famous roulette game. The simulation consists of 10000 spins with 6 people playing at the same time. Each person bets on *red*, *black*, *1 to 18*, *19 to 36*, *even* and *odd* throughout the simulation.
+The application simulates the famous roulette game. The simulation consists of 10000 spins with 6 people playing at the same time. Each person bets on *red*, *black*, *1 to 18*, *19 to 36*, *even*, or *odd* throughout the simulation.
 After each spin, the house pays the bet to the winning players. Then, if the game must continue, the players return to place their respective bets.
 
 ### Bet method
 <p>Each player has their own notes to calculate how much they will bet on each roulette spin. Starting notes: { 1, 2, 3, 4 }.</p>
 <p>Bet calculation: Addition of first and last number in notes. First bet will be 1 + 4 = 5.</p>
 
-* **Won:**&nbsp;&nbsp;&nbsp;&nbsp;The amount won is added at the end of notes. If bet is 1 + 4 = 5, then notes are { 1, 2, 3, 4, 5 }
-* **Lost:**&nbsp;&nbsp;&nbsp;&nbsp;The first and last items from notes are deleted. So, if bet with initial notes { 1, 2, 3, 4 }, then the notes will be { 2, 3 }.
-* **Special case:**&nbsp;&nbsp;&nbsp;&nbsp;If only one item remains in notes, then the player bet that item.
+* **Won:**&nbsp;&nbsp;&nbsp;&nbsp;The amount earned is added at the end of notes. If bet is 1 + 4 = 5, then notes are { 1, 2, 3, 4, 5 }
+* **Lost:**&nbsp;&nbsp;&nbsp;&nbsp;The first and last items from notes are deleted. So, if the player bets based on the initial notes { 1, 2, 3, 4 } and lose, then his notes will be { 2, 3 }.
+* **Special case:**&nbsp;&nbsp;&nbsp;&nbsp;If only one item remains in the notes, then the player bet that item.
 
 &nbsp;
 Bets has a minimum of 5 and a maximum of 4000.
@@ -57,7 +57,7 @@ To build this project you must have CMake (and make) installed. Follow this step
     * `cmake ../`
 5. Run make, this should generate application executable:
     * `make`
-6. You just generate the rouletteGame application executable, congrats!
+6. You just generated the rouletteGame application executable, congrats!
 
 ## How to run
 
